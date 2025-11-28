@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 
-import com.dwao.alium.survey.SurveyParameters;
+import com.dwao.alium.models.SurveyParameters;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -44,7 +44,7 @@ public class AliumModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void configure(String url) {
-    Alium.configure(url);
+    Alium.config(reactApplicationContext.getCurrentActivity().getApplication(),url);
   }
 
   @ReactMethod
@@ -58,6 +58,6 @@ public class AliumModule extends ReactContextBaseJavaModule {
     }
 
     SurveyParameters surveyParameters=new SurveyParameters(screenName, variables);
-    Alium.loadAliumSurvey(reactApplicationContext.getCurrentActivity(), surveyParameters);
+    Alium.trigger(reactApplicationContext.getCurrentActivity(), surveyParameters);
   }
 }
