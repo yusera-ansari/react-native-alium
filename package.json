@@ -1,6 +1,6 @@
 {
   "name": "react-native-alium",
-  "version": "0.1.0-dev",
+  "version": "0.1.0",
   "description": "A React Native wrapper for Alium Android SDK ",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
