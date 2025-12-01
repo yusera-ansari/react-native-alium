@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { configure, loadAliumSurvey } from 'react-native-alium';
+import { triggerWithParams, SurveyParametersBuilder } from 'react-native-alium';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Home = ({ navigation }) => {
   React.useEffect(() => {
-    console.log('Homescreen..');
-    loadAliumSurvey('AI', {});
+    console.log('Homescreen...');
+    let params = new SurveyParametersBuilder('home')
+      .addDim(1, 'yusera')
+      .addDim(2, '')
+      .addDim(3, '9029')
+      .addCustom('name', 'aluim')
+      .build();
+    triggerWithParams(params);
   }, []);
   return (
     <View style={styles.container}>
