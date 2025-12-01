@@ -43,12 +43,12 @@ public class AliumModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void configure(String url) {
+  public void config(String url) {
     Alium.config(reactApplicationContext.getCurrentActivity().getApplication(),url);
   }
 
   @ReactMethod
-  public void showSurvey(String screenName, ReadableMap customerVariables) {
+  public void trigger(String screenName, ReadableMap customerVariables) {
     Map variables=new HashMap();
     ReadableMapKeySetIterator iterator=customerVariables.keySetIterator();
     while(iterator.hasNextKey()){
