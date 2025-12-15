@@ -1,13 +1,19 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { configure, loadAliumSurvey } from 'react-native-alium';
+import { SurveyParametersBuilder, triggerWithParams } from 'react-native-alium';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Dashboard = ({ navigation }) => {
   React.useEffect(() => {
-    loadAliumSurvey('firstscreen', {});
+    let params = new SurveyParametersBuilder('item-details')
+      .addDim(1, 'alium')
+      .addDim(2, '')
+      .addDim(3, '9029')
+      .addCustom('name', 'aluim')
+      .build();
+    triggerWithParams(params);
   }, []);
   return (
     <View style={styles.container}>

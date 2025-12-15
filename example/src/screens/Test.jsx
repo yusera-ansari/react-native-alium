@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { configure, loadAliumSurvey } from 'react-native-alium';
+import { configure, trigger } from 'react-native-alium';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Test = ({ navigation }) => {
   React.useEffect(() => {
-    loadAliumSurvey('test');
+    trigger('home');
   }, []);
   return (
     <View style={styles.container}>
