@@ -22,7 +22,7 @@ import java.util.Map;
 
 @ReactModule(name = AliumModule.NAME)
 public class AliumModule extends ReactContextBaseJavaModule {
-  public static final String NAME = "Alium";
+  public static final String NAME = "RNAlium";
   private static String URL = "";
   private static ReactApplicationContext reactApplicationContext;
 
@@ -59,5 +59,10 @@ public class AliumModule extends ReactContextBaseJavaModule {
 
     SurveyParameters surveyParameters=new SurveyParameters(screenName, variables);
     Alium.trigger(reactApplicationContext.getCurrentActivity(), surveyParameters);
+  }
+
+  @ReactMethodpublic 
+  public void stop(String screenName){
+    Alium.stop(screenName);
   }
 }

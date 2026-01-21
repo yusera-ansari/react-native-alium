@@ -2,11 +2,11 @@
 #ifdef RCT_NEW_ARCH_ENABLED
 #import "RNAliumSpec.h"
 
-@interface Alium : NSObject <NativeAliumSpec>
+@interface RNAlium : NSObject <NativeAliumSpec>
 #else
 #import <React/RCTBridgeModule.h>
 
-@interface Alium : NSObject <RCTBridgeModule>
+@interface RNAlium : NSObject <RCTBridgeModule>
 #endif
 
 @end

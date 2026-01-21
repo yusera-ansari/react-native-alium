@@ -27,7 +27,7 @@ end
 
 target 'AliumExample' do
   config = use_native_modules!
-
+  pod 'Alium', :path=> '../../../../ios/native/alium-sdk-ios'
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.

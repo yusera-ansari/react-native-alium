@@ -6,8 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const Alium = NativeModules.Alium
-  ? NativeModules.Alium
+const Alium = NativeModules.RNAlium
+  ? NativeModules.RNAlium
   : new Proxy(
       {},
       {
@@ -17,19 +17,23 @@ const Alium = NativeModules.Alium
       }
     );
 
-export function config(url: String): void {
+export function config(url: string): void {
   return Alium.config(url);
 }
 interface Variables {
   [key: string]: any;
 }
 
-export function trigger(screen: String, customerParameters: Variables): void {
+export function trigger(screen: string, customerParameters: Variables): void {
   Alium.trigger(screen, customerParameters ? customerParameters : {});
 }
 
 export function triggerWithParams(params: SurveyParameters): void {
   Alium.trigger(params.screenName, params.customerVariables);
+}
+
+export function stop(screenName: string) {
+  Alium.stop(screenName);
 }
 // SurveyParameters.ts
 
