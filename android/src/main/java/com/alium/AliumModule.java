@@ -61,7 +61,7 @@ public class AliumModule extends ReactContextBaseJavaModule {
     Alium.trigger(reactApplicationContext.getCurrentActivity(), surveyParameters);
   }
 
-  @ReactMethodpublic 
+  @ReactMethod
   public void stop(String screenName){
     Alium.stop(screenName);
   }
