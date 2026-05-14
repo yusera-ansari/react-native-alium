@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.dependency    'Alium'
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/yusera-at-dwao/react-native-alium.git", :tag => "#{s.version}" }
-
-  s.source_files = "ios/**/*.{h,m,mm,swift}"
+  s.private_header_files = "ios/**/*.h"
+  s.source_files = "ios/**/*.{h,m,mm,swift,cpp}"
   s.swift_version = "5.0"
   s.static_framework = true
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
